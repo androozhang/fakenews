@@ -11,7 +11,7 @@ function TextInput() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('/predict', { text: newsText });
+      const response = await axios.post('http://127.0.0.1:5000/predict', { text: newsText });
       setPrediction(response.data.prediction);
     } catch (error) {
       console.error('Error predicting:', error);
