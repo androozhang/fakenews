@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS 
 from preprocessing import preprocess_text
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
@@ -47,6 +48,7 @@ model = RandomForestClassifier()
 model.fit(X_train_tfidf, y_train)
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def hello_world():
