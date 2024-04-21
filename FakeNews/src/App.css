@@ -18,3 +18,12 @@ h1 {
   color: #888;
   font-style: italic;
 }
+
+.question-icon {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 1000; 
+  color:  black;
+}
