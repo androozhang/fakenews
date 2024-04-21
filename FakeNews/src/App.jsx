@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <h1>CheckMate</h1>
-      <p className="subtitle">Check your new sources</p>
+      <p className="subtitle">Check your news sources</p>
       <div className="question-icon" onClick={toggleModal}>
        <FontAwesomeIcon icon={faQuestion} size="2xl"/>
       </div>
