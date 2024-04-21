@@ -9,6 +9,7 @@ function App() {
     <>
       <h1>Fake News</h1>
       <TextInput />
+      <p className="disclaimer">Disclaimer: The result is not 100% accurate.</p>
     </>
   )
 }

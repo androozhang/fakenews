@@ -1,0 +1,29 @@
+.text-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.text-input {
+    width: 80%; 
+    height: 80%; 
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #f0f0f0; 
+    border: 2px solid #ccc;
+    color: #333;  
+    resize: none;
+}
+
+.predict-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.prediction-message {
+    color: 'black';
+    padding: 10px;
+}
+  
