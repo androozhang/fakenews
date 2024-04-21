@@ -7,6 +7,7 @@ function TextInput() {
   const [prediction, setPrediction] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [confidence, setConfidence] = useState(0.0);
 
   const handleTextChange = (e) => {
     setNewsText(e.target.value);
@@ -16,10 +17,12 @@ function TextInput() {
     setIsLoading(true);
     setPrediction('');
     setErrorMessage('');
+    setConfidence(0.0);
 
     try {
       const response = await axios.post('http://127.0.0.1:5000/predict', { text: newsText });
       setPrediction(response.data.prediction);
+      setConfidence(response.data.confidence_score);
     } catch (error) {
       console.error('Error predicting:', error);
       setErrorMessage('Failed to get prediction. Please try again later.');
@@ -55,7 +58,7 @@ function TextInput() {
             color: 'black',
             padding: 10,
         }}>
-          {`Prediction: ${capitalizeFirstLetter(prediction)}`}
+          {`Prediction: ${capitalizeFirstLetter(prediction)} with a confidence of ${confidence.toFixed(2)}%`}
         </div>
       )}
     </div>
